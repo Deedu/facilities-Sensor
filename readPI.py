@@ -1,5 +1,9 @@
-import gpiozero as g
+import RPI.GPIO as GPIO
 
-reader = g.DigitalInputDevice(10)
 
-print(reader.value())
+CHANNEL =10
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(CHANNEL,GPIO.IN)
+
+print(GPIO.input(CHANNEL))
